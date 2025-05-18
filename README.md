@@ -6,7 +6,6 @@ This repo contains all my CS50 problem sets and projects completed using the off
 
 - Solutions to all problem sets, done directly on CS50’s GitHub environment
 - Code mainly in C, Python, and some web technologies
-- Notes and explanations about what I learned
 
 ## Structure
 
