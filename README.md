@@ -6,6 +6,7 @@ This repo contains all my CS50 problem sets and projects completed using the off
 
 - Solutions to all problem sets, done directly on CS50’s GitHub environment
 - Code mainly in C, Python, and some web technologies
+- Official course page: [CS50 – Introduction to Computer Science](https://cs50.harvard.edu/x/2025/)
 
 ## Structure
 
