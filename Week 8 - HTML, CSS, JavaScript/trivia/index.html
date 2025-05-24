@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            document.addEventListener("DOMContentLoaded", (event) => {
+                const q2CorrectAnswer = "abababc";
+                const buttons = document.getElementById("btn-row").querySelectorAll("button");
+
+                buttons.forEach((element, index) => {
+                    if (index === 1) {
+                        element.addEventListener("click", () => {
+                            element.classList.add("btn-correct");
+                            document.getElementById("q1-feedback").innerHTML = "Correct!";
+                        });
+                    } else {
+                        element.addEventListener("click", () => {
+                            element.classList.add("btn-incorrect");
+                            document.getElementById("q1-feedback").innerHTML = "Incorrect";
+                        });
+                    }
+                });
+
+                document.getElementById("q2-button").addEventListener("click", () => {
+                let text = document.getElementById("input-text").value;
+
+                if (text === q2CorrectAnswer) {
+                    document.getElementById("input-text").classList.add("btn-correct");
+                    document.getElementById("q2-feedback").innerHTML = "Correct";
+                } else {
+                    document.getElementById("input-text").classList.add("btn-incorrect");
+                    document.getElementById("q2-feedback").innerHTML = "Incorrect";
+                }
+            });
+            });
+        </script>
+    </head>
+
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <h3>What keyword is used to define a function in Python?</h3>
+                <div id="btn-row">
+                    <button>fun</button>
+                    <button>def</button>
+                    <button>function</button>
+                    <button>lambda</button>
+                    <button>func</button>
+                </div>
+                    <strong><p id="q1-feedback"></p></strong>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <h3>What is the output of the following Python code?</h3>
+                <code>print(3 * "ab" + "c")</code>
+                <div>
+                    <input id="input-text" type="text">
+                    <button id="q2-button">Check Answer</button>
+                </div>
+                <strong><p id="q2-feedback" class="correct-text"></p></strong>
+            </div>
+        </div>
+    </body>
+
+</html>
