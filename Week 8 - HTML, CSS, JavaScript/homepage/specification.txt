@@ -1,0 +1,32 @@
+Tags:
+custom-navbar ---> Custom tag created by me
+header
+section
+h1
+hr
+p
+strong
+em
+a
+img
+div
+ul
+li
+br
+
+
+CSS properties:
+padding
+margin
+font-weight
+text-decoration
+cursor
+text-align
+background-color
+color
+background
+
+
+JavaScript was used to create the custom tag and create a hover comportment on the home cards.
+Bootstrap was used to create the navbar, the cards on the index, the list on the languages pages, and to organize rows and cols.
+

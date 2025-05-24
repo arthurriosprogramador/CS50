@@ -1,0 +1,67 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+#custom-nav {
+    background-color: #023d73;
+}
+
+.active-link {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.row {
+    margin: 24px;
+}
+
+.card {
+    margin: 16px;
+    cursor: pointer;
+}
+
+.title-section {
+    text-align: center;
+    padding: 16px;
+}
+
+.content-section {
+    margin: 24px;
+}
+
+.c {
+    background-color: #004482;
+    color: white;
+}
+
+.py {
+    background: linear-gradient(to right, #4980ac, #FFE985);
+}
+
+.js {
+    background-color: #f7e018;
+}
+
+.kt {
+    background: linear-gradient(135deg,
+        #7F52FF 0%,
+        #B075FF 33%,
+        #FF798E 66%,
+        #FFA3A3 100%
+    );
+}
+
+.cpp {
+    background-color: #659ad2;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 8px
+}
+
+
+
