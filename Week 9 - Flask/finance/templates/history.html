@@ -1,0 +1,83 @@
+{% extends "layout.html" %}
+
+{% block title %}
+History
+{% endblock %}
+
+{% block main %}
+<div class="container-fluid px-5 text-start pb-5">
+    <p class="d-inline-flex gap-1">
+        <a class="btn btn-primary" data-bs-toggle="collapse" href="#filter-form" role="button" aria-expanded="false"
+            aria-controls="filter-form">
+            Filters
+        </a>
+    </p>
+    <div class="collapse" id="filter-form">
+        <div class="card card-body">
+            <form action="/history" method="post">
+                <select class="form-select" aria-label="symbol" name="symbol">
+                    <option selected value="">Choose the symbol</option>
+                    {% for symbol in symbols %}
+                    <option value="{{symbol}}">{{symbol}}</option>
+                    {% endfor %}
+                </select>
+                <h6 class="pt-3">Transaction type</h6>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="transaction-type" value="purchase"
+                            id="purchase">
+                        <label class="form-check-label" for="purchase">
+                            Purchase
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="transaction-type" value="sales" id="sales">
+                        <label class="form-check-label" for="sales">
+                            Sales
+                        </label>
+                    </div>
+                    <label for="total-price-range" class="form-label pt-3">Max price</label>
+                    <input type="range" class="form-range" min="{{min_price_range}}" max="{{max_price_range}}"
+                        id="total-price-range" name="max-price" value="{{max_price_range}}">
+                    <p>Range: <span id="range-value"></span></p>
+                    <button class="btn btn-primary" type="submit">Filter</button>
+            </form>
+        </div>
+    </div>
+    <form action="/history" method="get" class="pt-3">
+        <button class="btn btn-secondary" type="submit">Reset filters</button>
+    </form>
+</div>
+<div class="responsive-table px-5">
+    <table class="table table-striped text-end">
+        <thead class="table-light">
+            <tr>
+                <th scope="col">Symbol</th>
+                <th scope="col">Price</th>
+                <th scope="col">Shares</th>
+                <th scope="col">Transaction Type</th>
+                <th scope="col">Date</th>
+                <th scope="col">Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for transaction in transactions %}
+            <tr class="table-active">
+                <td>{{ transaction["symbol"] }}</td>
+                <td>{{ transaction["price"] }}</td>
+                <td>{{ transaction["shares"] }}</td>
+                <td>{{ transaction["transaction_type"] }}</td>
+                <td>{{ transaction["timestamp"] }}</td>
+                <td>{{ transaction["total"] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <script>
+        const rangeValue = document.getElementById("range-value");
+        document.getElementById("total-price-range").addEventListener("change", (event) => {
+            rangeValue.innerHTML = event.target.value;
+        });
+    </script>
+</div>
+{% endblock %}

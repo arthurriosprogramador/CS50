@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %}
+C$50 Finance
+{% endblock %}
+
+{% block main %}
+<div class="responsive-table px-5">
+    <table class="table table-striped text-end">
+        <thead class="table-light">
+            <tr>
+                <th scope="col">Symbol</th>
+                <th scope="col">Shares</th>
+                <th scope="col">Price</th>
+                <th scope="col">Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for stock in stocks %}
+            <tr class="table-active">
+                <td>{{ stock["symbol"] }}</td>
+                <td>{{ stock["shares"] }}</td>
+                <td>{{ stock["price"] }}</td>
+                <td>{{ stock["share_total"] }}</td>
+            </tr>
+            {% endfor %}
+        <tfoot>
+            <tr>
+                <th scope="row" colspan="3">Cash</th>
+                <td>{{ cash }}</td>
+            </tr>
+            <tr>
+                <th scope="row" colspan="3">TOTAL</th>
+                <td>{{ total }}</td>
+            </tr>
+        </tfoot>
+        </tbody>
+    </table>
+</div>
+{% endblock %}

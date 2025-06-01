@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <form action="/register" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" name="username" placeholder="Username" type="text">
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" class="form-control mx-auto w-auto" id="password" name="password" placeholder="Password" type="password">
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" class="form-control mx-auto w-auto" id="confirmation" name="confirmation" placeholder="Confirm password" type="password">
+        </div>
+        <div class="mb-3">
+            <input class="form-check-input" id="password-visibility" type="checkbox" value="">
+            <label class="form-check-label" for="password-visibility">Show password</label>
+        </div>
+        <button class="btn btn-primary" type="submit">Register</button>
+    </form>
+
+    <script>
+        document.getElementById("password-visibility").addEventListener("click", () => {
+            password = document.getElementById("password");
+            confirmation = document.getElementById("confirmation");
+
+            if (password.type === "password") {
+                password.type = "text"
+                confirmation.type = "text"
+            } else {
+                password.type = "password"
+                confirmation.type = "password"
+            }
+        });
+    </script>
+{% endblock %}
