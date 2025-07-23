@@ -19,4 +19,4 @@ This repo contains all my CS50 problem sets and projects completed using the off
 - **Week 6**: SQL databases  
 - **Week 7**: Web basics (HTML, CSS, JavaScript)  
 - **Week 8**: Flask web apps  
-- **Final Project**: [Brief description or link]
+- **Final Project**: [Fiance Tracker App](https://github.com/arthurriosprogramador/Lumen)
